@@ -1,14 +1,17 @@
 <script setup>
-  import './index.css';
+import "./index.css";
+import App from './App.vue'
+import { createApp, ref } from 'vue'
+
 </script>
 
 <template>
-  <div class="box-border w-screen h-64 p-2 m-2 text-center border border-green-400 rounded">
-    <h1>Hello</h1>
-  </div>
+<div id="app" class="w-full h-full border-2 rounded border-cyan-500">
+
+</div>
+
 </template>
 
+
 <style>
-
-
 </style>
