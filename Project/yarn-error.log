@@ -1,0 +1,75 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js init
+
+PATH: 
+  C:\Python310\Scripts\;C:\Python310\;C:\Python39\Scripts\;C:\Python39\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\xampp\php;C:\ProgramData\chocolatey\bin;C:\Program Files\CodeBlocks\MinGW\bin;C:\msys64\mingw64\bin;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\nodejs\;C:\ProgramData\ComposerSetup\bin;C:\Program Files\php-8.0.17;C:\Program Files\Git\cmd;C:\Users\SAZZAD HOSSAIN\AppData\Local\Microsoft\WindowsApps;C:\Users\SAZZAD HOSSAIN\AppData\Roaming\Composer\vendor\bin;%PhpStorm%;C:\Users\SAZZAD HOSSAIN\AppData\Local\GitHubDesktop\bin;C:\Program Files\CodeBlocks\MinGW\bin;C:\msys64\mingw64\bin;H:\Github;C:\Users\SAZZAD HOSSAIN\AppData\Local\Yarn\bin;C:\Users\SAZZAD HOSSAIN\AppData\Roaming\npm;C:\Program Files\php-8.0.17;
+
+Yarn version: 
+  1.22.15
+
+Node version: 
+  16.13.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  SyntaxError: C:\xampp\htdocs\Github\Vue.Js\Project\package.json: Unexpected string in JSON at position 103
+      at JSON.parse (<anonymous>)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (C:\Program Files (x86)\Yarn\lib\cli.js:310:30)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:321:13
+
+npm manifest: 
+  {
+      "name": "Project",
+      "version": "1.0.0",
+      "main": "index.js",
+      "license": "MIT"
+  
+          "scripts": {
+          "serve": "vue-cli-service serve",
+          "build": "vue-cli-service build",
+          "lint": "vue-cli-service lint"
+      },
+      "dependencies": {
+          "core-js": "^3.6.5",
+          "vue": "^3.0.0"
+      },
+      "devDependencies": {
+          "@babel/core": "^7.12.16",
+          "@babel/eslint-parser": "^7.12.16",
+          "@vue/cli-plugin-babel": "^5.0.0-beta.6",
+          "@vue/cli-plugin-eslint": "^5.0.0-beta.6",
+          "@vue/cli-service": "^5.0.0-beta.6",
+          "@vue/compiler-sfc": "^3.0.0",
+          "eslint": "^7.20.0",
+          "eslint-plugin-vue": "^7.6.0"
+      },
+      "eslintConfig": {
+          "root": true,
+          "env": {
+              "node": true
+          },
+          "extends": [
+              "plugin:vue/vue3-essential",
+              "eslint:recommended"
+          ],
+          "parserOptions": {
+              "parser": "@babel/eslint-parser"
+          },
+          "rules": {}
+      },
+      "browserslist": [
+          "> 1%",
+          "last 2 versions",
+          "not dead"
+      ]
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
