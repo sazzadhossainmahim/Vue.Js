@@ -214,10 +214,30 @@
   <!-- Computed Property -->
   <div>FullName - {{ computedFirstName }}-{{ computedLastName }}</div>
   <h1>{{ fullName }}</h1>
-  <button @click="computedPropertyItems.push({id:4,title:'keyboard',price:50})">Add Item </button>
-  <h2>
-    Total - {{total}}
-  </h2>
+  <button
+    @click="computedPropertyItems.push({ id: 4, title: 'keyboard', price: 50 })"
+  >
+    Add Item
+  </button>
+  <div>
+    <h2>Total - {{ getComputedTotal }}</h2>
+    <h3>computedMethod Total - {{ computedMethodGetTotal() }}</h3>
+    <input type="text" v-model="country" />
+    <template
+      v-for="computedPropertyItem in computedPropertyItems"
+      :key="computedPropertyItem.id"
+    >
+      <h2 v-if="computedPropertyItem.price > 100">
+        {{ computedPropertyItem.title }}{{ computedPropertyItem.price }}
+      </h2>
+    </template>
+    <h3
+      v-for="computedExpensiveItem in computedExpensiveItems"
+      :key="computedExpensiveItem.id"
+    >
+      {{ computedExpensiveItem.title }}{{ computedExpensiveItem.price }}
+    </h3>
+  </div>
 </template>
 
 <script>
@@ -286,11 +306,15 @@ export default {
           price: 200,
         },
         {
-          id:3,
-          title:'Laptop',
+          id: 3,
+          title: "Laptop",
           price: 300,
         },
       ],
+
+      country: "",
+
+      //
     };
   },
 
@@ -315,22 +339,45 @@ export default {
       // event.preventDefault();
       console.log("Form values", this.formHandlingValues);
     },
+    // ------------------computedMethodTotal
+    computedMethodGetTotal() {
+      console.log("getTotal Method");
+      return this.computedPropertyItems.reduce(
+        (getComputedTotal, curr) =>
+          (getComputedTotal = getComputedTotal + curr.price),
+        0
+      );
+    },
   },
-  computedFirstName: {
+
+  // ----------------------------------------------------------
+  // ---------------------------------------------------------
+  // =======================================================
+  computed: {
     fullName() {
       return `${this.computedFirstName} ${this.computedLastName}`;
     },
-  },
-  computed:{
-      // ComputedProperty
-  total(){
-    return this.computedPropertyItems.reduce((total,curr)=>(total=total+curr.price),0)
-  }
-}
 
+    // ComputedProperty
+    getComputedTotal() {
+      console.log("Total Computed Property");
+      return this.computedPropertyItems.reduce(
+        (getComputedTotal, curr) =>
+          (getComputedTotal = getComputedTotal + curr.price),
+        0
+      );
+    },
+
+    computedExpensiveItems() {
+      return this.computedPropertyItems.filter(
+        (computedPropertyItems) => computedPropertyItems.price > 100
+      );
+    },
+  },
 };
+// ------------computed propertyGetTotalPrice
 </script>
-j
+
 <style>
 #app {
   font-family: Helvetica, Arial, sans-serif;
