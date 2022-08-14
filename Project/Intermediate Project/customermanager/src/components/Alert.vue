@@ -33,7 +33,7 @@
 
 <script>
 export default {
-  name: "alert",
+  name: "AlertVue",
   props:['message'],
   data() {
     return {
